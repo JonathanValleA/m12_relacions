@@ -1,4 +1,4 @@
-package demojparelacions.controladors;
+package demojarelacions.controladors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -6,10 +6,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import demojparelacions.entitats.Course;
-import demojparelacions.entitats.CourseMaterial;
-import demojparelacions.repositoris.CourseMaterialRepositori;
-import demojparelacions.repositoris.CourseRepositori;
+import demojarelacions.entitats.Course;
+import demojarelacions.entitats.CourseMaterial;
+import demojarelacions.repositoris.CourseMaterialRepositori;
+import demojarelacions.repositoris.CourseRepositori;
 
 
 

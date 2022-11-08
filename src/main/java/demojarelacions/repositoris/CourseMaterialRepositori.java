@@ -1,8 +1,8 @@
-package demojparelacions.repositoris;
+package demojarelacions.repositoris;
 
 import org.springframework.data.repository.CrudRepository;
 
-import demojparelacions.entitats.CourseMaterial;
+import demojarelacions.entitats.CourseMaterial;
 
 
 public interface CourseMaterialRepositori extends CrudRepository<CourseMaterial, Long>{
