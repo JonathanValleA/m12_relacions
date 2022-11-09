@@ -1,10 +1,14 @@
 package demojarelacions.entitats;
 
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -13,45 +17,24 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity 
+@Data
+@NoArgsConstructor
 public class Course {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	private String title;
 
+	// Relacion OneToOne Funciona correctamente (Hacer maven clear y maven install)
+	/*
 	@OneToOne(mappedBy="course")
 	@JsonIgnore
 	private CourseMaterial courseMaterial;
+	*/
 	
-	public Course() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-	
-	public Course(long id, String title) {
-		super();
-		this.id = id;
-		this.title = title;
-	}
-	
-	public long getId() {
-		return id;
-	}
-	
-	public void setId(long id) {
-		this.id = id;
-	}
-
-	public String getTitle() {
-		return title;
-	}
-
-	public void setTitle(String title) {
-		this.title = title;
-	}
-	@Override
-	public String toString() {
-		return "Course [id=" + id + ", title=" + title + "]";
-	}
+	// Relacion ManyToOne Funciona correctamente (Hacer maven clear y maven install)
+	@OneToMany(mappedBy="course")
+	@JsonIgnore
+	private List<CourseMaterial> courseMaterial;
 	
 }
