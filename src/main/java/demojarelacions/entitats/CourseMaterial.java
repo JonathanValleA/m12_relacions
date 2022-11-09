@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -12,6 +14,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity 
+@Data
+@NoArgsConstructor
 public class CourseMaterial {
 	
 	@Id
@@ -19,39 +23,15 @@ public class CourseMaterial {
 	private long id;
 	private String url;
 
+	// Relacion OneToOne Funciona correctamente (Hacer maven clear y maven install)
+	/*
 	@OneToOne
 	private Course course;
+	*/
 	
-	public CourseMaterial() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-	
-	public CourseMaterial(long id, String url) {
-		super();
-		this.id = id;
-		this.url = url;
-	}
-
-	public long getId() {
-		return id;
-	}
-
-	public void setId(long id) {
-		this.id = id;
-	}
-
-	public String getUrl() {
-		return url;
-	}
-
-	public void setUrl(String url) {
-		this.url = url;
-	}
-
-	@Override
-	public String toString() {
-		return "CourseMaterial [id=" + id + ", url=" + url + "]";
-	}
+	// Relacion ManyToOne Funciona correctamente (Hacer maven clear y maven install)
+	@ManyToOne
+	@JoinColumn(name = "course_id")
+	private Course course;	
 	
 }
