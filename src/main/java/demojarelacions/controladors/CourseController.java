@@ -30,6 +30,8 @@ public class CourseController {
 	@GetMapping("course/{id}")
 	public Course getCourse(@PathVariable long id) {
 		Course course = alRep.findById(id).get();
+		
+		System.out.println("Lazy");
 		return course;
 	}
 	
@@ -44,5 +46,6 @@ public class CourseController {
 		CourseMaterial material = alRep2.findById(id).get();
 		return material;
 	}
+	
 }
 
