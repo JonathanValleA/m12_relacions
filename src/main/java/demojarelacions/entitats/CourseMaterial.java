@@ -32,7 +32,7 @@ public class CourseMaterial {
 	*/
 	
 	// Relacion ManyToOne Funciona correctamente (Hacer maven clear y maven install)
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	private Course course;	
 	
 }
