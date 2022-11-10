@@ -2,8 +2,6 @@ package demojarelacions.entitats;
 
 
 import java.util.List;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -34,7 +32,7 @@ public class Course {
 	*/
 	
 	// Relacion ManyToOne Funciona correctamente (Hacer maven clear y maven install)
-	@OneToMany(fetch=FetchType.LAZY, mappedBy="course")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy="course")
 	@JsonIgnore
 	private List<CourseMaterial> courseMaterial;
 	

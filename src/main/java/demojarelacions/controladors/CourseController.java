@@ -1,6 +1,7 @@
 package demojarelacions.controladors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -46,6 +47,10 @@ public class CourseController {
 		CourseMaterial material = alRep2.findById(id).get();
 		return material;
 	}
-	
+	// Borar curso por id
+	@DeleteMapping("course/{id}")
+	public void getDelete(@PathVariable("id") long id) {
+		alRep.deleteById(id);
+	}
 }
 
