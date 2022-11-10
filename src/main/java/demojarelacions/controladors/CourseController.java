@@ -47,7 +47,7 @@ public class CourseController {
 		CourseMaterial material = alRep2.findById(id).get();
 		return material;
 	}
-	
+	// Borar curso por id
 	@DeleteMapping("course/{id}")
 	public void getDelete(@PathVariable("id") long id) {
 		alRep.deleteById(id);
