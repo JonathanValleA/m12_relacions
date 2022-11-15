@@ -4,8 +4,8 @@ import java.io.Serializable;
 
 import org.springframework.data.repository.CrudRepository;
 
-import demojarelacions.entitats.Course;
+import demojarelacions.entitats.Student;
 
-public interface CourseRepositori extends CrudRepository<Course, Serializable>{
+public interface StudentRepositori extends CrudRepository<Student, Serializable> {
 
 }

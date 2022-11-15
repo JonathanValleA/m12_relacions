@@ -32,7 +32,9 @@ public class CourseMaterial {
 	*/
 	
 	// Relacion ManyToOne Funciona correctamente (Hacer maven clear y maven install)
-	@ManyToOne(fetch = FetchType.EAGER)
-	private Course course;	
+	/*@ManyToOne(fetch = FetchType.EAGER)
+	private Course course;*/
+	@OneToOne
+	private Course course;
 	
 }

@@ -9,8 +9,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import demojarelacions.entitats.Course;
 import demojarelacions.entitats.CourseMaterial;
+import demojarelacions.entitats.Student;
 import demojarelacions.repositoris.CourseMaterialRepositori;
 import demojarelacions.repositoris.CourseRepositori;
+import demojarelacions.repositoris.StudentRepositori;
 
 @RestController
 @RequestMapping("api")
@@ -21,7 +23,8 @@ public class CourseController {
 	CourseRepositori alRep;
 	@Autowired
 	CourseMaterialRepositori alRep2;
-	
+	@Autowired
+	StudentRepositori alRep3;
 	// listar todos los cursos
 	@GetMapping("course")
 	public Iterable<Course> getCourse() {
@@ -51,6 +54,16 @@ public class CourseController {
 	@DeleteMapping("course/{id}")
 	public void getDelete(@PathVariable("id") long id) {
 		alRep.deleteById(id);
+	}
+	
+	@GetMapping("student")
+	public Iterable<Student> getStudent(){
+		return alRep3.findAll();
+	}
+	@GetMapping("student/{id}")
+	public Student getStudent(@PathVariable long id) {
+		Student student = alRep3.findById(id).get();
+		return student;
 	}
 }
 
